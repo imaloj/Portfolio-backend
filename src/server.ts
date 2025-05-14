@@ -11,7 +11,7 @@ const PORT = process.env.PORT || 5000; // Set the port from environment variable
 const app = express(); // Create an Express application
 
 app.use(cors({
-    origin:"http://localhost:3000", //
+    origin:"http://portfolio-backend-nxaq.vercel.app",
     methods:["GET", "POST", "OPTIONS"],
     credentials:true,
 })); // Enable CORS for all routes
