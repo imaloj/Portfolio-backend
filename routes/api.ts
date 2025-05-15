@@ -6,7 +6,7 @@ import type { ContactFormData } from "../src/types/email"
 const router = express.Router()
 
 // Contact form submission
-router.post("/contact", async (req , res) => 
+router.post("contact", async (req , res) => 
 {
   console.log("Receiving Body:",req.body);
   try {
@@ -14,6 +14,7 @@ router.post("/contact", async (req , res) =>
 
     // Send notification email to portfolio owner
     await sendNotificationEmail(formData)
+    await sendConfirmationEmail(formData)
     res.status(200).json({
       success: true,
       message: "Thank you! Your message has been sent successfully.",
