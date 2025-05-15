@@ -6,7 +6,7 @@ import type { ContactFormData } from "../src/types/email"
 const router = express.Router()
 
 // Contact form submission
-router.post("contact", async (req , res) => 
+router.post("/contact", async (req , res) => 
 {
   console.log("Receiving Body:",req.body);
   try {
